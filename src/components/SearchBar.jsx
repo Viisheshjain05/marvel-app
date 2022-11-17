@@ -35,7 +35,7 @@ const SearchBar = () => {
               if (text === "") {
                 return val;
               }
-              return val.name.toLowerCase().includes(text);
+              return val.name.toLowerCase().includes(text.toLowerCase());
             })
             .map((item) => {
               console.log(item.thumbnail.path + `/portrait_incredible.gif`);
