@@ -1,6 +1,6 @@
 
 ## APP - Marvel Searchbar App
-[Netflix App](https://marvel-searchbar.netlify.app/) 
+[MarvelApp netlify deploy link](https://marvel-searchbar.netlify.app/) 
 
 ## Installation
  -- Create-React-App
