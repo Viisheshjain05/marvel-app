@@ -1,7 +1,9 @@
 import URI from "./config";
 import axios from "axios";
 
-const fetchData = async () => {
+let app = {};
+
+app.fetchData = async () => {
   const response = await axios.get(URI);
   const characters = response.data;
   const { data } = characters;
@@ -9,7 +11,7 @@ const fetchData = async () => {
   return data;
 };
 
-export const filterData = (data, text) => {
+app.filterData = (data, text) => {
   const value = data.filter((fiterby) => {
     if (text === "") {
       return data;
@@ -20,4 +22,4 @@ export const filterData = (data, text) => {
   return value;
 };
 
-export default fetchData;
+export default app;

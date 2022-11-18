@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SearchInput from "./Input/SearchInput";
 import "./MarvelApp.css";
 import Card from "./CharCard/Card";
-import fetchData, { filterData } from "../Common/app";
+import app from "../Common/app";
 
 const MarvelApp = () => {
   const [data, setData] = useState([]);
@@ -10,13 +10,13 @@ const MarvelApp = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      const data = await fetchData();
+      const data = await app.fetchData();
       setData(data.results);
     };
     loadData();
   }, []);
 
-  let charArr = filterData(data, text);
+  let charArr = app.filterData(data, text);
   return (
     <div className="input_search">
       {/* Add the input field with the input element  */}
