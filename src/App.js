@@ -1,10 +1,12 @@
-import './App.css';
-import SearchBar from './components/SearchBar';
-
+import "./App.css";
+import SearchBar from "./Components/MarvelApp";
+import ErrorBoundary from "./Components/ErrorBoundry";
 function App() {
   return (
     <div className="App">
-      <SearchBar />
+      <ErrorBoundary>
+        <SearchBar />
+      </ErrorBoundary>
     </div>
   );
 }
