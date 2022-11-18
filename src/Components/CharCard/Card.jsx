@@ -1,27 +1,17 @@
 import React from "react";
 
-const Card = ({ data, text }) => {
+const Card = (props) => {
+  let { id, thumbnail, name } = props.char;
+  let imgPath = thumbnail.path + `/portrait_incredible.` + thumbnail.extension;
+
   return (
     <div className="container">
-      {data?.length > 0 &&
-        data.map((item) => {
-          return (
-            <div className="card" key={item.id}>
-              <img
-                src={
-                  item.thumbnail.path +
-                  `/portrait_incredible.` +
-                  item.thumbnail.extension
-                }
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">{item.name}</h5>
-              </div>
-            </div>
-          );
-        })}
+      <div className="card" key={id}>
+        <img src={imgPath} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+        </div>
+      </div>
     </div>
   );
 };

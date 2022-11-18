@@ -16,20 +16,14 @@ const MarvelApp = () => {
     loadData();
   }, []);
 
-
-
+  let charArr = filterData(data, text);
   return (
-
-
-
     <div className="input_search">
       {/* Add the input field with the input element  */}
       <Header setText={setText} />
-      {/**
-       * Render the stored data using the map function
-       * before render filter them with their name
-       */}
-      <Card data={filterData(data, text)} text={text} />
+
+      {/* filter them with their name */}
+      {charArr?.length > 0 ? charArr.map((char) => <Card char={char} />) : null}
     </div>
   );
 };
