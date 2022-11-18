@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Input/SearchInput";
+import SearchInput from "./Input/SearchInput";
 import "./MarvelApp.css";
 import Card from "./CharCard/Card";
 import fetchData, { filterData } from "../Common/app";
@@ -20,10 +20,14 @@ const MarvelApp = () => {
   return (
     <div className="input_search">
       {/* Add the input field with the input element  */}
-      <Header setText={setText} />
+      <SearchInput setText={setText} />
 
       {/* filter them with their name */}
-      {charArr?.length > 0 ? charArr.map((char) => <Card char={char} />) : null}
+      <div className="container">
+        {charArr?.length > 0
+          ? charArr.map((char) => <Card char={char} />)
+          : null}
+      </div>
     </div>
   );
 };
